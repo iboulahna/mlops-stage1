@@ -1,13 +1,18 @@
+#pre-commit install
+#pre-commit run --all-files
+
 repos:
   - repo: https://github.com/psf/black
-    rev: 23.1.0  # Assure-toi de vérifier la version la plus récente sur le GitHub de black
+    rev: 23.1.0  # Assure-toi de spécifier la version correcte
     hooks:
       - id: black
         language_version: python3
-        args: ['--line-length', '79']  # Limite de longueur de ligne selon PEP 8
+        args: ['--line-length', '79']
+        files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
 
   - repo: https://github.com/pre-commit/mirrors-flake8
-    rev: v5.0.4  # Vérifie la version la plus récente de flake8
+    rev: v5.0.4
     hooks:
       - id: flake8
-        args: ['--max-line-length=79']  # Limite de longueur de ligne selon PEP 8
+        args: ['--max-line-length=79']
+        files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
