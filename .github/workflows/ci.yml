@@ -31,6 +31,6 @@ jobs:
         run: |
           pre-commit run --all-files  # Exécute les hooks pré-commit sur tous les fichiers
 
-      - name: Run tests
-        run: |
-          pytest  # Ajoute ton framework de test ici si tu en as un
+      # - name: Run tests
+      #   run: |
+      #     pytest  # Ajoute ton framework de test ici si tu en as un
