@@ -17,10 +17,10 @@ repos:
 #         args: ['--max-line-length=79']
 #         files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
 
-repos:
-  - repo: local
-    hooks:
-      - id: black
-        name: black
-        entry: ./hooks/black
-        language: python
+# repos:
+#   - repo: local
+#     hooks:
+#       - id: black
+#         name: black
+#         entry: ./hooks/black
+#         language: python
