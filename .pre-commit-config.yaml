@@ -17,7 +17,7 @@ repos:
 #         args: ['--max-line-length=79']
 #         files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
 
-repos:S
+repos:
   - repo: local
     hooks:
       - id: black
