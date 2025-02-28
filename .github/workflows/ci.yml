@@ -28,7 +28,14 @@ jobs:
           pip install pre-commit  # Installe pre-commit
           pre-commit install  # Installe les hooks définis dans .pre-commit-config.yaml
 
+      # Étape pour configurer Git avec le PAT
+      - name: Set up Git for authentication
+        run: |
+          git config --global url."https://$GH_TOKEN@github.com/".insteadOf "https://github.com/"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Utilise le secret pour accéder à GitHub
 
+          
       - name: Run pre-commit hooks
         run: |
           pre-commit run  # --all-files  # Exécute les hooks pré-commit sur tous les fichiers
