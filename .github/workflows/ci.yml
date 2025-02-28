@@ -27,10 +27,10 @@ jobs:
           pip install -r requirements.txt  # Installe les dépendances de ton projet
           pip install pre-commit  # Installe pre-commit
 
-          
-      # - name: Run pre-commit hooks
-      #   run: |
-      #     pre-commit run --all-files  # Exécute les hooks pré-commit sur tous les fichiers
+
+      - name: Run pre-commit hooks
+        run: |
+          pre-commit run --all-files  # Exécute les hooks pré-commit sur tous les fichiers
 
       # - name: Run tests
       #   run: |
