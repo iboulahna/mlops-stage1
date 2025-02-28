@@ -10,12 +10,12 @@ repos:
         args: ['--line-length', '79']
         files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
 
-#   - repo: https://github.com/pre-commit/mirrors-flake8
-#     rev: v5.0.4
-#     hooks:
-#       - id: flake8
-#         args: ['--max-line-length=79']
-#         files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
+  - repo: https://github.com/pre-commit/mirrors-flake8
+    rev: v5.0.4
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=79']
+        files: ^_resources/  # Limite l'exécution aux fichiers du répertoire _resources
 
 # repos:
 #   - repo: local
