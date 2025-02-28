@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main  # ou la branche que tu utilises
-  pull_request:
-    branches:
-      - main  # ou la branche que tu utilises
+  # pull_request:
+  #   branches:
+  #     - main  # ou la branche que tu utilises
 
 jobs:
   pre_commit:
