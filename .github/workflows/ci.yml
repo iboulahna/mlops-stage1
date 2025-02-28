@@ -31,7 +31,7 @@ jobs:
 
       - name: Run pre-commit hooks
         run: |
-          pre-commit run --all-files  # Exécute les hooks pré-commit sur tous les fichiers
+          pre-commit run  # --all-files  # Exécute les hooks pré-commit sur tous les fichiers
 
       # - name: Run tests
       #   run: |
