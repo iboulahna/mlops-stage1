@@ -1,5 +1,4 @@
-### Using PandasUDF and PySpark ==> in src direcory 
-# To scale pandas analytics on a spark dataframe
+
 
 from pyspark.sql import DataFrame as SparkDataFrame
 from pyspark.sql.functions import pandas_udf, col, when, lit
