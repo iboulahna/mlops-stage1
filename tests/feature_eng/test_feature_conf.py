@@ -1,32 +1,32 @@
-import pytest
-from pyspark.sql import SparkSession
+# import pytest
+# from pyspark.sql import SparkSession
 
-# La fixture pour créer une session Spark
-@pytest.fixture(scope="module")
-def spark_session():
-    try:
-        from databricks.connect import DatabricksSession
-        print("Using Databricks Connect")
-        return DatabricksSession.builder.profile("unit_tests").getOrCreate()
-    except ValueError:
-        print("Profile `unit_tests` not found, trying default SparkSession getOrCreate")
-        from pyspark.sql import SparkSession
-        return SparkSession.builder.getOrCreate()
-    except ImportError:
-        print("No Databricks Connect, building and returning local SparkSession")
-        from pyspark.sql import SparkSession
-        return SparkSession.builder.getOrCreate()
+# # La fixture pour créer une session Spark
+# @pytest.fixture(scope="module")
+# def spark_session():
+#     try:
+#         from databricks.connect import DatabricksSession
+#         print("Using Databricks Connect")
+#         return DatabricksSession.builder.profile("unit_tests").getOrCreate()
+#     except ValueError:
+#         print("Profile `unit_tests` not found, trying default SparkSession getOrCreate")
+#         from pyspark.sql import SparkSession
+#         return SparkSession.builder.getOrCreate()
+#     except ImportError:
+#         print("No Databricks Connect, building and returning local SparkSession")
+#         from pyspark.sql import SparkSession
+#         return SparkSession.builder.getOrCreate()
 
-# Exemple de test utilisant la fixture `spark_session`
-def test_example(spark_session):
-    # Utilise la session Spark pour créer un DataFrame
-    data = [("Alice", 29), ("Bob", 30), ("Charlie", 35)]
-    columns = ["name", "age"]
-    df = spark_session.createDataFrame(data, columns)
+# # Exemple de test utilisant la fixture `spark_session`
+# def test_example(spark_session):
+#     # Utilise la session Spark pour créer un DataFrame
+#     data = [("Alice", 29), ("Bob", 30), ("Charlie", 35)]
+#     columns = ["name", "age"]
+#     df = spark_session.createDataFrame(data, columns)
 
-    # Effectue une opération de test
-    assert df.count() == 3
-    assert df.filter(df.age > 30).count() == 1
+#     # Effectue une opération de test
+#     assert df.count() == 3
+#     assert df.filter(df.age > 30).count() == 1
 
 
 # import pytest
